@@ -1,7 +1,59 @@
-html {
-  font-size: 16px;
+body {
+  font-size: 20px;
+  background-color: pink;
 }
 
-body {
-  background-color: skyblue;
+.container {
+  max-width: 1240px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main__content {
+  width: 1200px;
+  min-height: 400px;
+  padding: 20px;
+  border: 1px solid black;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+  background-color: pink;
+}
+.main__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.main__item {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  color: black;
+}
+.main__item:last-child {
+  margin-bottom: 20px;
+}
+.main__btn {
+  font-size: 26px;
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 250ms linear;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+  color: black;
+  background-color: pink;
+}
+.main__btn:hover, .main__btn:focus {
+  background-color: rgba(255, 255, 255, 0.197);
 }
