@@ -18,54 +18,40 @@ async function loadUsers(page) {
 loadUsers(currentPage);
 
 function getUsers(users) {
+  console.log(users);
   users.data.forEach((user) => {
-    // const template = `
-    // <div class="main__item" id="card-${user.id}">
+    const divItem = document.createElement("div");
+    divItem.className = "main__item";
 
-    //   <div class="main__content-user">
-    //     <div class="main__user">First_name: ${user.first_name}</div>
-    //     <div class="main__user">Last_name: ${user.last_name}</div>
-    //     <div class="main__user">Email: ${user.email}</div>
-    //     <div class="main__user main__ids">Id: ${user.id}</div>
-    //   </div>
-    //   <img class="main__img" src="${user.avatar}">
-
-    // </div>`;
-
-    const divContent = document.createElement("div");
-
-    divContent.insertAdjacentHTML(
+    divItem.insertAdjacentHTML(
       "beforeend",
       `<div class="main__user">First_name: ${user.first_name}</div>`
     );
-    divContent.insertAdjacentHTML(
+    divItem.insertAdjacentHTML(
       "beforeend",
       `<div class="main__user">Last_name: ${user.last_name}</div>`
     );
-    divContent.insertAdjacentHTML(
+    divItem.insertAdjacentHTML(
       "beforeend",
       `<div class="main__user">Email: ${user.email}</div>`
     );
-    divContent.insertAdjacentHTML(
+    divItem.insertAdjacentHTML(
       "beforeend",
       `<div class="main__user main__ids">Id: ${user.id}</div>`
     );
-    divContent.insertAdjacentHTML(
+
+    divItem.insertAdjacentHTML(
       "beforeend",
       `<img class="main__img" src="${user.avatar}">`
     );
 
-    divContent.addEventListener("click", (e) => {
-      console.log(e);
-      window.location.href = `user.html?userId=param`;
-    });
-
-    const divMain = document.createElement("div").appendChild(divContent);
+    const divMain = document.createElement("div").appendChild(divItem);
 
     content.appendChild(divMain);
 
-    // const card = document.getElementById(`card-${user.id}`);
-    // console.log(card);
+    divMain.addEventListener("click", () => {
+      window.location.href = `user.html?userId/${user.id}`;
+    });
   });
 }
 
